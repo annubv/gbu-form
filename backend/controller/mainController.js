@@ -1,8 +1,8 @@
 const dbConn = require("../database/db.js"); 
 const User = dbConn.User;
 
-function singup(req,res){
-    res.render("signup");
+function signup(req,res){
+    res.render("signUp");
 }
 
 function login(req,res){
@@ -16,5 +16,5 @@ function login(req,res){
 
 module.exports = {
     login : login,
-    singup : singup,
+    signup : signup,
 }

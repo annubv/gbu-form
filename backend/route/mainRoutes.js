@@ -7,6 +7,12 @@ const router = express.Router();
 const app = express();
 
 router.route('/').get(mainController.login)
-router.route('/singup').get(mainController.singup);
+
+router.route('/login').get(mainController.login);
+// router.route('/login').post(loginController.login);
+
+router.route('/signup').get(mainController.signup);
+router.route('/signup').post(signUpController.signup);
+
 
 module.exports = router;
