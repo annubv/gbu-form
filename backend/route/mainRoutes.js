@@ -7,5 +7,6 @@ const router = express.Router();
 const app = express();
 
 router.route('/').get(mainController.login)
+router.route('/singup').get(mainController.singup);
 
 module.exports = router;
