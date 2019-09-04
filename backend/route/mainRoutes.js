@@ -9,7 +9,7 @@ const app = express();
 router.route('/').get(mainController.login)
 
 router.route('/login').get(mainController.login);
-// router.route('/login').post(loginController.login);
+router.route('/login').post(loginController.login);
 
 router.route('/signup').get(mainController.signup);
 router.route('/signup').post(signUpController.signup);

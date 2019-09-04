@@ -18,6 +18,16 @@ function signup(req,res){
         password
     })
     .then(user => {
+        console.log(user)
+        const newUser = {
+            id: email,
+            name : fName,
+            userId : user.id
+            };
+        
+        console.log(newUser);
+        req.session.user = newUser;
+
         res.render("form", { 
             msg : "Welcome",
             user : user,
