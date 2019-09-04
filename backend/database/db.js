@@ -29,3 +29,13 @@ const User = sequelize.define('users',{
         allowNull: false,
     }
 });
+
+
+module.exports = {
+    User : User,
+}
+
+
+sequelize.sync()
+.then(() => console.log('users table has been successfully created, if one doesn\'t exist'))
+.catch(error => console.log('This error occurred' ,error));
