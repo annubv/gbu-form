@@ -1,0 +1,204 @@
+:root {
+  --body-bg-color: #eaedeb;
+  --main-text-color: #1b2631;
+  --nav-bg-color: #fdfdfd;
+  --light-text-color: #686868;
+  --link-color: #0000e6;
+  --link-hover: #000073;
+  --btn-color: #ff4d4d;
+  --btn-hover: #b63a3a;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  font-size: 0.8rem;
+  flex-shrink: 0;
+  padding: 1.5rem;
+  background-color: #0e1511;
+  color: #c2c2c2;
+  text-align: center;
+}
+
+.content {
+  flex: 1 0 auto;
+  line-height: 1.5rem;
+  font-family: "Didact Gothic", "Roboto", sans-serif;
+  background-color: var(--body-bg-color);
+  color: var(--main-text-color);
+}
+
+.content .nav {
+  padding: 0.8rem 5.5rem;
+  display: flex;
+  flex-direction: row;
+  box-shadow: 0 0 0.5rem 0.1rem rgba(0, 0, 0, 0.2);
+  background-color: var(--nav-bg-color);
+}
+
+.content .nav .intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0.5rem 2.3rem;
+}
+
+.content .nav .intro .banner {
+  font-size: 2.3rem;
+  line-height: 2.4rem;
+  font-weight: bold;
+}
+
+.content .nav .intro .tagline {
+  font-size: 1rem;
+  color: var(--light-text-color);
+}
+
+.content .formcontainer {
+  margin: 2rem 10rem;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: var(--nav-bg-color);
+  transition: 0.15s ease-in-out;
+}
+
+.content .formcontainer:hover {
+  box-shadow: 0 0 0.3rem 0.1rem rgba(0, 0, 0, 0.2);
+}
+
+.content .formcontainer .regform {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 3rem;
+}
+
+.content .formcontainer .regform .head {
+  font-size: 2em;
+  margin: 0.5rem 0 1.5rem 0;
+}
+
+.content .formcontainer .regform .formip {
+  padding: 0.8rem;
+  margin: 0.5rem 0rem;
+  transition: 0.3s ease-in-out;
+}
+
+.content .formcontainer .regform .formbtn {
+  padding: 0.8rem;
+  margin: 0.5rem 0rem;
+  cursor: pointer;
+  background-color: var(--btn-color);
+  border: none;
+  color: white;
+  transition: 0.18s ease-in-out;
+}
+
+.content .formcontainer .regform .formbtn:hover {
+  background-color: var(--btn-hover);
+}
+
+.content .formcontainer .regform a {
+  text-decoration: none;
+  margin-top: 1rem;
+  color: var(--link-color);
+  transition: 0.18s ease-in-out;
+}
+
+.content .formcontainer .regform a:hover {
+  color: var(--link-hover);
+}
+
+.content .formcontainer img {
+  object-fit: cover;
+}
+
+/* formpage */
+
+.content .formcontainer .aform {
+  padding: 3rem 3rem 1rem 3rem;
+  text-align: left;
+}
+
+.content .formcontainer .aform .sec {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+.content .formcontainer .aform .sec .sec-heading {
+  border-bottom: 1px solid #1b26312d;
+  border-bottom-width: 100%;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.content .formcontainer .aform .sec .sub-sec {
+  display: flex;
+  flex-direction: row;
+  margin: 1rem 0rem;
+}
+
+.content .formcontainer .aform .sec .sub-sec .mini-sec {
+  display: flex;
+  flex-direction: column;
+  margin-right: 2rem;
+}
+
+.content .formcontainer .aform .sec .sub-sec .mini-sec label {
+  margin-right: 0.5rem;
+}
+
+.content .formcontainer .aform .sec .sub-sec .mini-sec input {
+  padding: 0.5rem;
+  background-color: #ececec;
+  border: 1px solid #dad8d8;
+}
+
+.content .formcontainer .aform .sec .sub-sec .mini-sec input:focus {
+  background: none;
+}
+
+.content .formcontainer .aform .sec .sub-sec .mini-sec select {
+  background-color: #ececec;
+  border: 1px solid #dad8d8;
+  padding: 0.5rem;
+}
+
+.content .formcontainer .aform .sec .sub-sec .mini-sec input[type="date"] {
+  padding: 0.4rem;
+}
+
+.content .formcontainer .aform .sec input[type="submit"] {
+  width: 150px;
+  padding: 0.8rem;
+  margin: 0.5rem 0rem;
+  cursor: pointer;
+  background: #23233b;
+  color: white;
+  border: none;
+  transition: 0.18s ease-in-out;
+}
+
+.content .formcontainer .aform .sec input[type="submit"]:hover {
+  background-color: #65657a;
+  color: white;
+}
+
+.content .formcontainer .aform .sec .sub-sec .mini-sec .full {
+  box-sizing: border-box;
+  width: 500px;
+}
+/* formpage */
