@@ -20,7 +20,7 @@ function login(req, res) {
 
       console.log(newUser);
       req.session.user = newUser;
-      res.redirect("/");
+      res.redirect("/form");
     }
   });
 }

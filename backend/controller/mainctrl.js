@@ -9,7 +9,7 @@ function login(req, res) {
   res.render("login");
 }
 
-const home = (req, res) => {
+const form = (req, res) => {
   res.render("form", {
     user: req.session.user
   });
@@ -18,5 +18,5 @@ const home = (req, res) => {
 module.exports = {
   login,
   signup,
-  home
+  form
 };
