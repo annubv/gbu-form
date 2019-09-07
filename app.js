@@ -6,7 +6,7 @@ const compression = require("compression");
 const bodyParser = require("body-parser");
 const logger = require("morgan");
 const path = require("path");
-const mainRoutes = require("./backend/route/mainRoutes");
+const mainRoutes = require("./backend/route/mainroutes");
 var session = require("express-session");
 var cookieParser = require("cookie-parser");
 

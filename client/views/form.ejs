@@ -1,7 +1,146 @@
-<html>
-    <head></head>
-
-    <body>
-        <p>Welcome <%= user.fName %></p>
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>GBU Admissions</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="content">
+      <div class="nav">
+        <img src="assets/logo.png" alt="logo" width="100px" height="100px%" />
+        <div class="intro">
+          <div class="banner">
+            Gautam Buddha University Admission Portal
+          </div>
+          <div class="tagline">
+            Gautam Buddha University, Established by the Uttar Pradesh Gautam
+            Buddha University Act 2002 UP Act No. 9 of 2002
+          </div>
+          <a
+            href="http://gbu.ac.in/NAAC/NAAC%20Certificate_31Dec18.jpg"
+            target="blank"
+            >Approved by UGC under Section 12-B. NAAC accredited with B+
+            Grade</a
+          >
+        </div>
+      </div>
+      <div class="formcontainer">
+        <form class="aform" action="">
+          <div class="sec">
+            <div class="sec-heading">Personal Details</div>
+            <div class="sub-sec">
+              <div class="mini-sec">
+                <label for="fname">First Name</label>
+                <input
+                  type="text"
+                  name=""
+                  id="fname"
+                  value="<%= user.fname %>"
+                  disabled
+                />
+              </div>
+              <div class="mini-sec">
+                <label for="sname">Second Name</label>
+                <input type="text" name="" id="sname" />
+              </div>
+              <div class="mini-sec">
+                <label for="lname">Last Name</label>
+                <input
+                  type="text"
+                  name=""
+                  value="<%= user.lname %>"
+                  id="lname"
+                  disabled
+                />
+              </div>
+            </div>
+            <div class="sub-sec">
+              <div class="mini-sec">
+                <label for="dob">Date of Birth</label>
+                <input type="date" name="dob" id="dob" />
+              </div>
+              <div class="mini-sec">
+                <label for="sex">Sex</label>
+                <select name="sex" id="sex">
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                  <option value="Other">Other</option>
+                  <option value="Prefer not to say">Prefer not to say</option>
+                </select>
+              </div>
+            </div>
+            <div class="sub-sec">
+              <div class="mini-sec">
+                <label for="faname">Father's Name</label>
+                <input type="text" name="faname" id="faname" />
+              </div>
+              <div class="mini-sec">
+                <label for="moname">Mother's Name</label>
+                <input type="text" name="moname" id="moname" />
+              </div>
+            </div>
+          </div>
+          <div class="sec">
+            <div class="sec-heading">Contact Details</div>
+            <div class="sub-sec">
+              <div class="mini-sec">
+                <label for="add1">Address Line 1</label
+                ><input class="full" type="text" name="add1" id="add1" />
+              </div>
+            </div>
+            <div class="sub-sec">
+              <div class="mini-sec">
+                <label for="add2">Address Line 2</label
+                ><input class="full" type="text" name="add2" id="add2" />
+              </div>
+            </div>
+            <div class="sub-sec">
+              <div class="mini-sec">
+                <label for="add3">City</label
+                ><input type="text" name="add3" id="add3" />
+              </div>
+              <div class="mini-sec">
+                <label for="add4">State</label
+                ><input type="text" name="add4" id="add3" />
+              </div>
+            </div>
+            <div class="sub-sec">
+              <div class="mini-sec">
+                <label for="mob">Mobile No.</label
+                ><input type="text" name="mob" id="mob" />
+              </div>
+              <div class="mini-sec">
+                <label for="altmob">Alternate Phone No.</label
+                ><input type="text" name="altmob" id="altmob" />
+              </div>
+              <div class="mini-sec">
+                <label for="email">Email Address</label
+                ><input
+                  type="email"
+                  name="email"
+                  id="email"
+                  value="<%= user.emailid %>"
+                  disabled
+                />
+              </div>
+              <div class="mini-sec">
+                <label for="altemail">Alternate Email Address</label
+                ><input type="email" name="altemail" id="altemail" />
+              </div>
+            </div>
+          </div>
+          <div class="sec">
+            <div class="sec-heading"></div>
+            <input type="submit" value="Submit" />
+          </div>
+        </form>
+      </div>
+    </div>
+    <footer>
+      Copyright © 2009 Gautam Buddha University. All rights reserved.
+    </footer>
+  </body>
 </html>
