@@ -31,8 +31,30 @@ const User = sequelize.define('users',{
 });
 
 
+const FormData = sequelize.define("form", {
+    id : {
+        type : Sequelize.INTEGER,
+        primaryKey: true,
+        autoIncrement: true
+    },
+    fName: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    lName: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    email: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+})
+
+
 module.exports = {
     User : User,
+    FormData : FormData,
 }
 
 
