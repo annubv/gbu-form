@@ -41,6 +41,10 @@ const FormData = sequelize.define("form", {
         type: Sequelize.STRING,
         allowNull: false
     },
+    sName: {
+        type: Sequelize.STRING,
+        allowNull: true
+    },
     lName: {
         type: Sequelize.STRING,
         allowNull: false
@@ -49,6 +53,50 @@ const FormData = sequelize.define("form", {
         type: Sequelize.STRING,
         allowNull: false
     },
+    dob: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    sex: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    faname: {
+        type: Sequelize.STRING,
+        allowNull: true
+    },
+    moname: {
+        type: Sequelize.STRING,
+        allowNull: true
+    },
+    add1: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    add2: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    add3: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    add4: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    mob: {
+        type: Sequelize.NUMBER,
+        allowNull: false
+    },
+    altmob: {
+        type: Sequelize.NUMBER,
+        allowNull: false
+    },
+    altemail: {
+        type: Sequelize.STRING,
+        allowNull: false
+    }
 })
 
 

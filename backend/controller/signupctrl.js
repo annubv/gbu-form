@@ -17,9 +17,9 @@ function signup(req, res) {
   }).then(user => {
     console.log(user);
     const newUser = {
-      emailid: email,
-      fname: user.fName,
-      lname: user.lName,
+      email: email,
+      fName: user.fName,
+      lName: user.lName,
       userId: user.id
     };
 
