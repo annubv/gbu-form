@@ -107,5 +107,5 @@ module.exports = {
 
 
 sequelize.sync()
-.then(() => console.log('users table has been successfully created, if one doesn\'t exist'))
+.then(() => console.log('tables have been successfully created, if one doesn\'t exist'))
 .catch(error => console.log('This error occurred' ,error));
