@@ -1,5 +1,6 @@
 const dbConn = require("../database/db.js");
 const User = dbConn.User;
+const FormData = dbConn.FormData;
 
 function signup(req, res) {
   res.render("signup");
@@ -10,9 +11,16 @@ function login(req, res) {
 }
 
 const form = (req, res) => {
-  res.render("form", {
-    user: req.session.user
-  });
+  FormData.findOne({
+    where :{
+      email:req.session.user.email
+    }
+  })
+  .then(user =>{
+    res.render("form", {
+      user: user
+    });
+  })
 };
 
 module.exports = {

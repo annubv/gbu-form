@@ -39,12 +39,11 @@
                   name="fName"
                   id="fname"
                   value="<%= user.fName %>"
-                  disabled
                 />
               </div>
               <div class="mini-sec">
                 <label for="sname">Second Name</label>
-                <input type="text" name="sName" id="sname" />
+                <input type="text" name="sName" id="sname" value="<%= user.sName %>"/>
               </div>
               <div class="mini-sec">
                 <label for="lname">Last Name</label>
@@ -53,14 +52,13 @@
                   name="lName"
                   value="<%= user.lName %>"
                   id="lname"
-                  disabled
                 />
               </div>
             </div>
             <div class="sub-sec">
               <div class="mini-sec">
                 <label for="dob">Date of Birth</label>
-                <input type="date" name="dob" id="dob" />
+                <input type="date" name="dob" id="dob" value="<%= user.dob %>"/>
               </div>
               <div class="mini-sec">
                 <label for="sex">Sex</label>
@@ -123,7 +121,6 @@
                   name="email"
                   id="email"
                   value="<%= user.email %>"
-                  disabled
                 />
               </div>
               <div class="mini-sec">
