@@ -63,8 +63,8 @@
               <div class="mini-sec">
                 <label for="sex">Sex</label>
                 <select name="sex" id="sex">
-                  <option value="Male">Male</option>
-                  <option value="Female">Female</option>
+                  <option "<%= user.sex === 'Male' ? "selected" : '' %>" value="Male" >Male</option>
+                  <option "<%= user.sex === 'Female' ? "selected" : '' %>" value="Female" >Female</option>
                   <option value="Other">Other</option>
                   <option value="Prefer not to say">Prefer not to say</option>
                 </select>
