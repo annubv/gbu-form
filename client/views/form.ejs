@@ -62,7 +62,7 @@
               </div>
               <div class="mini-sec">
                 <label for="sex">Sex</label>
-                <select name="sex" id="sex">
+                <select name="sex" id="sex" value="<%= user.sex %>">
                   <option value="Male">Male</option>
                   <option value="Female">Female</option>
                   <option value="Other">Other</option>
@@ -72,12 +72,12 @@
             </div>
             <div class="sub-sec">
               <div class="mini-sec">
-                <label for="faname">Father's Name</label>
-                <input type="text" name="faname" id="faname" />
+                <label for="faname" >Father's Name</label>
+                <input type="text" name="faname" id="faname" value="<%= user.faname %>"/>
               </div>
               <div class="mini-sec">
                 <label for="moname">Mother's Name</label>
-                <input type="text" name="moname" id="moname" />
+                <input type="text" name="moname" id="moname" value="<%= user.moname %>"/>
               </div>
             </div>
           </div>
@@ -85,34 +85,34 @@
             <div class="sec-heading">Contact Details</div>
             <div class="sub-sec">
               <div class="mini-sec">
-                <label for="add1">Address Line 1</label
-                ><input class="full" type="text" name="add1" id="add1" />
+                <label for="add1">Address Line 1</label>
+                <input class="full" type="text" name="add1" id="add1" value="<%= user.add1 %>"/>
               </div>
             </div>
             <div class="sub-sec">
               <div class="mini-sec">
                 <label for="add2">Address Line 2</label
-                ><input class="full" type="text" name="add2" id="add2" />
+                ><input class="full" type="text" name="add2" id="add2" value="<%= user.add2 %>"/>
               </div>
             </div>
             <div class="sub-sec">
               <div class="mini-sec">
                 <label for="add3">City</label
-                ><input type="text" name="add3" id="add3" />
+                ><input type="text" name="add3" id="add3" value="<%= user.add3 %>"/>
               </div>
               <div class="mini-sec">
                 <label for="add4">State</label
-                ><input type="text" name="add4" id="add3" />
+                ><input type="text" name="add4" id="add3" value="<%= user.add4 %>"/>
               </div>
             </div>
             <div class="sub-sec">
               <div class="mini-sec">
                 <label for="mob">Mobile No.</label
-                ><input type="text" name="mob" id="mob" />
+                ><input type="text" name="mob" id="mob" value="<%= user.mob %>"/>
               </div>
               <div class="mini-sec">
                 <label for="altmob">Alternate Phone No.</label
-                ><input type="text" name="altmob" id="altmob" />
+                ><input type="text" name="altmob" id="altmob" value="<%= user.altmob %>"/>
               </div>
               <div class="mini-sec">
                 <label for="email">Email Address</label
@@ -125,7 +125,7 @@
               </div>
               <div class="mini-sec">
                 <label for="altemail">Alternate Email Address</label
-                ><input type="email" name="altemail" id="altemail" />
+                ><input type="email" name="altemail" id="altemail" value="<%= user.altemail %>"/>
               </div>
             </div>
           </div>
