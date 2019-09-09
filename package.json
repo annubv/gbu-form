@@ -23,6 +23,7 @@
     "ejs": "^2.7.1",
     "express": "^4.17.1",
     "express-session": "^1.16.2",
+    "jspdf": "^1.5.3",
     "morgan": "^1.9.1",
     "nodemon": "^1.19.2",
     "sequelize": "^5.18.1",

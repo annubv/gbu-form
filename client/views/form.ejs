@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
     <title>GBU Admissions</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
@@ -131,7 +132,7 @@
           </div>
           <div class="sec">
             <div class="sec-heading"></div>
-            <input type="submit" value="Submit" />
+            <input type="submit" value="Submit" onclick="pdf()"/>
           </div>
         </form>
       </div>
@@ -139,5 +140,14 @@
     <footer>
       Copyright © 2009 Gautam Buddha University. All rights reserved.
     </footer>
+
+    <script>
+      function pdf(){
+        var doc = new jsPDF()
+
+        doc.text('Hello world!', 10, 10)
+        doc.save('a4.pdf')
+      }
+    </script>
   </body>
 </html>
