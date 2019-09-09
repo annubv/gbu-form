@@ -103,7 +103,7 @@
               </div>
               <div class="mini-sec">
                 <label for="add4">State</label
-                ><input type="text" name="add4" id="add3" value="<%= user.add4 %>"/>
+                ><input type="text" name="add4" id="add4" value="<%= user.add4 %>"/>
               </div>
             </div>
             <div class="sub-sec">
@@ -143,11 +143,32 @@
 
     <script>
       function pdf(){
-        var doc = new jsPDF()
+        const doc = new jsPDF()
 
-        doc.text('Hello world!', 10, 10)
+        const fName = document.getElementById("fname").value
+        const sName = document.getElementById("sname").value
+        const lName = document.getElementById("lname").value
+        const email = document.getElementById("email").value
+        const dob = document.getElementById("dob").value
+        const sex = document.getElementById("sex").value
+        const faname = document.getElementById("faname").value
+        const moname = document.getElementById("moname").value
+        const add1 = document.getElementById("add1").value
+        const add2 = document.getElementById("add2").value
+        const add3 = document.getElementById("add3").value
+        const add4 = document.getElementById("add4").value
+        const mob = document.getElementById("mob").value
+        const altmob = document.getElementById("altmob").value
+        const altemail = document.getElementById("altemail").value
+
+
+        doc.text('First name:', 10, 10)
+        doc.text(fName, 40, 10)
+        doc.text('Second Name:', 10, 20)
+        doc.text(sName, 40, 20)
         doc.save('a4.pdf')
       }
     </script>
+
   </body>
 </html>
