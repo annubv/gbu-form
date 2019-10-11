@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
     <title>GBU Admissions</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
@@ -28,7 +29,7 @@
         </div>
       </div>
       <div class="formcontainer">
-        <form class="aform" action="">
+        <form class="aform" action="/form" method="POST">
           <div class="sec">
             <div class="sec-heading">Personal Details</div>
             <div class="sub-sec">
@@ -36,37 +37,35 @@
                 <label for="fname">First Name</label>
                 <input
                   type="text"
-                  name=""
+                  name="fName"
                   id="fname"
-                  value="<%= user.fname %>"
-                  disabled
+                  value="<%= user.fName %>"
                 />
               </div>
               <div class="mini-sec">
                 <label for="sname">Second Name</label>
-                <input type="text" name="" id="sname" />
+                <input type="text" name="sName" id="sname" value="<%= user.sName %>"/>
               </div>
               <div class="mini-sec">
                 <label for="lname">Last Name</label>
                 <input
                   type="text"
-                  name=""
-                  value="<%= user.lname %>"
+                  name="lName"
+                  value="<%= user.lName %>"
                   id="lname"
-                  disabled
                 />
               </div>
             </div>
             <div class="sub-sec">
               <div class="mini-sec">
                 <label for="dob">Date of Birth</label>
-                <input type="date" name="dob" id="dob" />
+                <input type="date" name="dob" id="dob" value="<%= user.dob %>"/>
               </div>
               <div class="mini-sec">
                 <label for="sex">Sex</label>
                 <select name="sex" id="sex">
-                  <option value="Male">Male</option>
-                  <option value="Female">Female</option>
+                  <option "<%= user.sex === 'Male' ? "selected" : '' %>" value="Male" >Male</option>
+                  <option "<%= user.sex === 'Female' ? "selected" : '' %>" value="Female" >Female</option>
                   <option value="Other">Other</option>
                   <option value="Prefer not to say">Prefer not to say</option>
                 </select>
@@ -74,12 +73,12 @@
             </div>
             <div class="sub-sec">
               <div class="mini-sec">
-                <label for="faname">Father's Name</label>
-                <input type="text" name="faname" id="faname" />
+                <label for="faname" >Father's Name</label>
+                <input type="text" name="faname" id="faname" value="<%= user.faname %>"/>
               </div>
               <div class="mini-sec">
                 <label for="moname">Mother's Name</label>
-                <input type="text" name="moname" id="moname" />
+                <input type="text" name="moname" id="moname" value="<%= user.moname %>"/>
               </div>
             </div>
           </div>
@@ -87,34 +86,34 @@
             <div class="sec-heading">Contact Details</div>
             <div class="sub-sec">
               <div class="mini-sec">
-                <label for="add1">Address Line 1</label
-                ><input class="full" type="text" name="add1" id="add1" />
+                <label for="add1">Address Line 1</label>
+                <input class="full" type="text" name="add1" id="add1" value="<%= user.add1 %>"/>
               </div>
             </div>
             <div class="sub-sec">
               <div class="mini-sec">
                 <label for="add2">Address Line 2</label
-                ><input class="full" type="text" name="add2" id="add2" />
+                ><input class="full" type="text" name="add2" id="add2" value="<%= user.add2 %>"/>
               </div>
             </div>
             <div class="sub-sec">
               <div class="mini-sec">
                 <label for="add3">City</label
-                ><input type="text" name="add3" id="add3" />
+                ><input type="text" name="add3" id="add3" value="<%= user.add3 %>"/>
               </div>
               <div class="mini-sec">
                 <label for="add4">State</label
-                ><input type="text" name="add4" id="add3" />
+                ><input type="text" name="add4" id="add4" value="<%= user.add4 %>"/>
               </div>
             </div>
             <div class="sub-sec">
               <div class="mini-sec">
                 <label for="mob">Mobile No.</label
-                ><input type="text" name="mob" id="mob" />
+                ><input type="text" name="mob" id="mob" value="<%= user.mob %>"/>
               </div>
               <div class="mini-sec">
                 <label for="altmob">Alternate Phone No.</label
-                ><input type="text" name="altmob" id="altmob" />
+                ><input type="text" name="altmob" id="altmob" value="<%= user.altmob %>"/>
               </div>
               <div class="mini-sec">
                 <label for="email">Email Address</label
@@ -122,19 +121,18 @@
                   type="email"
                   name="email"
                   id="email"
-                  value="<%= user.emailid %>"
-                  disabled
+                  value="<%= user.email %>"
                 />
               </div>
               <div class="mini-sec">
                 <label for="altemail">Alternate Email Address</label
-                ><input type="email" name="altemail" id="altemail" />
+                ><input type="email" name="altemail" id="altemail" value="<%= user.altemail %>"/>
               </div>
             </div>
           </div>
           <div class="sec">
             <div class="sec-heading"></div>
-            <input type="submit" value="Submit" />
+            <input type="submit" value="Submit" onclick="pdf()"/>
           </div>
         </form>
       </div>
@@ -142,5 +140,35 @@
     <footer>
       Copyright © 2009 Gautam Buddha University. All rights reserved.
     </footer>
+
+    <script>
+      function pdf(){
+        const doc = new jsPDF()
+
+        const fName = document.getElementById("fname").value
+        const sName = document.getElementById("sname").value
+        const lName = document.getElementById("lname").value
+        const email = document.getElementById("email").value
+        const dob = document.getElementById("dob").value
+        const sex = document.getElementById("sex").value
+        const faname = document.getElementById("faname").value
+        const moname = document.getElementById("moname").value
+        const add1 = document.getElementById("add1").value
+        const add2 = document.getElementById("add2").value
+        const add3 = document.getElementById("add3").value
+        const add4 = document.getElementById("add4").value
+        const mob = document.getElementById("mob").value
+        const altmob = document.getElementById("altmob").value
+        const altemail = document.getElementById("altemail").value
+
+
+        doc.text('First name:', 10, 10)
+        doc.text(fName, 40, 10)
+        doc.text('Second Name:', 10, 20)
+        doc.text(sName, 40, 20)
+        doc.save('a4.pdf')
+      }
+    </script>
+
   </body>
 </html>

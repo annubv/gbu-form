@@ -12,15 +12,15 @@ function login(req, res) {
       res.render("login");
     } else {
       const newUser = {
-        emailid: email,
-        fname: user.fName,
-        lname: user.lName,
+        email: email,
+        fName: user.fName,
+        lName: user.lName,
         userId: user.id
       };
 
       console.log(newUser);
       req.session.user = newUser;
-      res.redirect("/");
+      res.redirect("/form");
     }
   });
 }

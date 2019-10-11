@@ -1,32 +1,39 @@
 const dbConn = require("../database/db.js");
 const User = dbConn.User;
-var session = require("express-session");
-
+const FormData = dbConn.FormData;
+ 
 function signup(req, res) {
   const { fName, lName, email, password } = req.body;
-  console.log(fName);
-  console.log(lName);
-  console.log(email);
-  console.log(password);
-
+  
   User.create({
     fName,
     lName,
     email,
     password
   }).then(user => {
-    console.log(user);
-    const newUser = {
-      emailid: email,
-      fname: user.fName,
-      lname: user.lName,
-      userId: user.id
-    };
+    // console.log(user);
+    FormData.create({
+      fName,
+      lName,
+      email
+    })
+    .then(formData => {
 
-    console.log(newUser);
-    req.session.user = newUser;
+      const newUser = {
+        email: email,
+        fName: user.fName,
+        lName: user.lName,
+        userId: user.id
+      };
 
-    res.redirect("/");
+      console.log(newUser);
+      req.session.user = newUser;
+
+      res.redirect("/form");
+    })
+    .catch(err => {
+      console.log(err)
+    })
   });
 }
 
